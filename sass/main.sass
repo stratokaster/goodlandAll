@@ -1,0 +1,193 @@
+@import '_mixins/media'
+@import 'modules/font'
+@import "modules/colors"
+body, html
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+    font-size: 18px
+    line-height: 1.2
+    font-family: 'Montserrat', sans-serif
+    & *, & *:before, & *:after
+        box-sizing: inherit
+    +media(1400)
+        font-size: 16px
+ul, ol, li, p
+    display: block
+    padding: 0
+    margin: 0
+a
+    font-family: 'Montserrat', sans-serif
+    color: inherit
+    text-decoration: none
+    transition: all .3s ease
+@import 'modules/buttons'
+.wrapper
+    width: 100%
+    max-width: 1200px
+    padding: 0 15px
+    margin: 0 auto
+header
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    color: white
+    z-index: 100
+    padding: 30px 0
+    .wrapper
+        position: relative
+        display: flex
+        align-items: center
+        justify-content: space-between
+    .logo
+        font-size: 2.6666666666666665rem
+        font-weight: 600
+        opacity: 0
+    nav, ul
+        display: flex
+        align-items: center
+    nav
+        .btn
+            margin: 0 30px
+    ul
+        li
+            padding: 0 30px
+            a
+                font-size: 1.3333333333333333rem
+                font-weight: 600
+                &:hover
+                    color: $blue
+                    border-bottom: 1px solid $blue
+.dropdown
+    position: relative
+    margin-left: 30px
+    &__selected
+        cursor: pointer
+        display: flex
+        align-items: center
+        border: 1px solid #999
+        padding: 15px 18px
+        border-radius: 10px
+        font-size: 1.1111111111111112rem
+        line-height: 1
+        img
+            display: block
+            width: 28px
+            height: auto
+        span
+            display: inline-block
+            margin: 0 9px
+    &__item a
+        cursor: pointer
+        display: flex
+        align-items: center
+        padding: 15px 18px
+        border-radius: 10px
+        font-size: 1.1111111111111112rem
+        line-height: 1
+        img
+            display: block
+            width: 28px
+            height: auto
+        span
+            display: inline-block
+            margin: 0 9px
+    &__hidden
+        position: absolute
+        top: calc(100% + 20px)
+        left: 0
+        width: 100%
+        opacity: 0
+        visibility: hidden
+        transition: .3s ease
+        transition-property: opacity, top
+    &.active .dropdown__hidden,
+    &:hover .dropdown__hidden
+        top: 100%
+        opacity: 1
+        visibility: visible
+
+.main
+    position: relative
+    width: 100%
+    height: 100vh
+    max-height: 780px
+    min-height: 500px
+    background-image: url('../images/main.png')
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+    color: white
+    .wrapper
+        height: 100%
+        display: flex
+        align-items: center
+    &__content
+        max-width: 475px
+        h1
+            margin-bottom: 30px
+            font-size: 48px
+        .section__subtitle
+            font-size: 1.3333333333333333rem
+        .btn
+            margin-top: 60px
+    .sony-element
+        position: absolute
+        bottom: 0
+        left: 0
+        transform: translate(20%, 69%)
+b
+    font-weight: 600
+h1,h2,h3,h4,h5,h6
+    display: block
+    font-weight: 600
+    line-height: 1
+    margin: 0
+    padding: 0
+    color: inherit
+h1
+    font-size: 48px
+h2
+    font-size: 36px
+    font-weight: 600
+h3
+    font-size: 24px
+    font-weight: 700
+.text_center
+    text-align: center
+.section__title
+    position: relative
+    margin-bottom: 30px
+    font-size: 36px
+    &:after
+        content: ''
+        display: block
+        width: 132px
+        border-bottom: 2px solid
+        margin: 21px auto 0px
+        position: absolute
+        top: 100%
+        left: 50%
+        transform: translateX(-50%)
+.profit
+    padding: 50px 0px
+    &__content
+        display: flex
+        justify-content: center
+        padding-top: 60px
+    &__item
+        flex: 0 0 50%
+        max-width: 410px
+        margin: 0 100px
+        font-size: 1.1111111111111112rem
+    &__graph
+        margin: 55px auto 60px
+        img
+            display: block
+            width: auto
+            height: 400px
+.title__gradient
+    background-image: linear-gradient(180deg, #33A9C4 0%, #134084 100%)
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
