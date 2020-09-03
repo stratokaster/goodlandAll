@@ -12,6 +12,8 @@ body, html
         box-sizing: inherit
     +media(1400)
         font-size: 16px
+body
+    height: 10000px
 ul, ol, li, p
     display: block
     padding: 0
@@ -27,7 +29,7 @@ a
     max-width: 1200px
     padding: 0 15px
     margin: 0 auto
-header
+.page__header
     position: fixed
     top: 0
     left: 0
@@ -35,6 +37,21 @@ header
     color: white
     z-index: 100
     padding: 30px 0
+    &:after
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background-size: cover
+        background-position: center
+        background-repeat: no-repeat
+        background-image: url(../images/header_bg.png)
+        transition: .3s ease
+        transition-property: opacity
+        opacity: 0
+        z-index: -1
     .wrapper
         position: relative
         display: flex
@@ -44,6 +61,7 @@ header
         font-size: 2.6666666666666665rem
         font-weight: 600
         opacity: 0
+        transition: opacity .3s ease
     nav, ul
         display: flex
         align-items: center
@@ -59,6 +77,11 @@ header
                 &:hover
                     color: $blue
                     border-bottom: 1px solid $blue
+    &.fixed
+        &:after
+            opacity: 1
+        .logo
+            opacity: 1
 .dropdown
     position: relative
     margin-left: 30px
@@ -170,8 +193,15 @@ h3
         top: 100%
         left: 50%
         transform: translateX(-50%)
+.text_white
+    color: white
+
 .profit
-    padding: 50px 0px
+    padding: 50px 0px 80px
+    background-image: url(../images/second_bg.png)
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
     &__content
         display: flex
         justify-content: center
@@ -191,3 +221,34 @@ h3
     background-image: linear-gradient(180deg, #33A9C4 0%, #134084 100%)
     -webkit-background-clip: text
     -webkit-text-fill-color: transparent
+.title__gradient--light
+    background-image: linear-gradient(180deg, #3CB8D9 0%, #3093B2 100%)
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+
+.improvement
+    padding: 50px 0
+    color: white
+    background-image: url(../images/impr_bg.png)
+    background-position: center
+    background-size: cover
+    background-repeat: no-repeat
+    .section__title
+        margin-bottom: 95px
+    &__container
+        display: flex
+        margin-bottom: 70px
+        &>*
+            flex: 0 0 33.3333%
+            img
+                display: block
+                width: auto
+                height: 170px
+                margin: 0 auto
+    &__item_text
+        padding: 60px 30px 0
+        max-width: 300px
+        margin: 0 auto
+        &--left
+            padding: 0
+            max-width: 100%
